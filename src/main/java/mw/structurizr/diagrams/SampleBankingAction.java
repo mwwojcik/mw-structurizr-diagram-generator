@@ -1,4 +1,4 @@
-package mw.structurizr;
+package mw.structurizr.diagrams;
 
 import com.structurizr.Workspace;
 import com.structurizr.documentation.Format;
@@ -7,7 +7,7 @@ import com.structurizr.model.*;
 import com.structurizr.util.MapUtils;
 import com.structurizr.view.*;
 
-class SampleDiagram extends AbstractDiagram {
+public class SampleBankingAction extends AbstractAction {
 
   private static final String EXISTING_SYSTEM_TAG = "Existing System";
   private static final String BANK_STAFF_TAG = "Bank Staff";
@@ -16,12 +16,12 @@ class SampleDiagram extends AbstractDiagram {
   private static final String DATABASE_TAG = "Database";
   private static final String FAILOVER_TAG = "Failover";
 
-  public static SampleDiagram of() {
-    return new SampleDiagram();
+  public static SampleBankingAction of() {
+    return new SampleBankingAction();
   }
 
-  public static SampleDiagram create() {
-    return new SampleDiagram();
+  public static SampleBankingAction create() {
+    return new SampleBankingAction();
   }
 
   protected Workspace create(Workspace workspace) {
