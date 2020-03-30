@@ -4,7 +4,7 @@ import com.structurizr.Workspace;
 import com.structurizr.model.*;
 import com.structurizr.view.*;
 
-public class LibraryDiagramAction extends AbstractAction {
+public class LibraryDiagramPublisherAction extends AbstractAction {
 
     private static final String EXISTING_SYSTEM_TAG = "Existing System";
     private static final String BANK_STAFF_TAG = "Bank Staff";
@@ -19,30 +19,64 @@ public class LibraryDiagramAction extends AbstractAction {
         Model model = workspace.getModel();
         ViewSet views = workspace.getViews();
 
-        model.setEnterprise(new Enterprise("Big Bank plc"));
+        model.setEnterprise(new Enterprise("Library"));
 
         // people and software systems
-        Person customer =
+        Person patron =
                 model.addPerson(
                         Location.External,
-                        "Personal Banking Customer",
-                        "A customer of the bank, with personal bank accounts.");
+                        "Regular patron",
+                        "Library patron, with the ability to make holds and rentals.");
 
-        SoftwareSystem internetBankingSystem =
+        SoftwareSystem librarySystem =
                 model.addSoftwareSystem(
                         Location.Internal,
-                        "Internet Banking System",
-                        "Allows customers to view information about their bank accounts, and make payments.");
-        customer.uses(internetBankingSystem, "Views account balances, and makes payments using");
+                        "Library",
+                        "Allows patrons to make holds and checkouts.");
+        patron.uses(librarySystem, "Views patron profiles, with current holds and checkouts.");
 
-        SoftwareSystem mainframeBankingSystem =
+        SoftwareSystem reportingSystem =
                 model.addSoftwareSystem(
                         Location.Internal,
-                        "Mainframe Banking System",
-                        "Stores all of the core banking information about customers, accounts, transactions, etc.");
-        mainframeBankingSystem.addTags(EXISTING_SYSTEM_TAG);
-        internetBankingSystem.uses(
-                mainframeBankingSystem, "Gets account information from, and makes payments using");
+                        "Library reporting system.",
+                        "Stores all of the library information like popular books,   etc.");
+        reportingSystem.addTags(EXISTING_SYSTEM_TAG);
+
+
+        SoftwareSystem deptCollectionSystem =
+                model.addSoftwareSystem(
+                        Location.Internal,
+                        "Library dept collection system.",
+                        "Stores all of the overdue holds and checkouts informations etc.");
+        reportingSystem.addTags(EXISTING_SYSTEM_TAG);
+
+
+        SoftwareSystem emailSystem =
+                model.addSoftwareSystem(
+                        Location.Internal, "E-mail System", "The internal e-mail system.");
+        deptCollectionSystem.uses(emailSystem, "Sends e-mail using");
+        deptCollectionSystem.addTags(EXISTING_SYSTEM_TAG);
+        
+        emailSystem.addTags(EXISTING_SYSTEM_TAG);
+        emailSystem.delivers(patron, "Sends e-mails to");
+
+
+        librarySystem.uses(reportingSystem,"Sends information to");
+        librarySystem.uses(deptCollectionSystem,"Sends overdue");
+
+
+        SystemLandscapeView systemLandscapeView =
+                views.createSystemLandscapeView(
+                        "SystemLandscape", "The system landscape diagram for Big Bank plc.");
+        systemLandscapeView.addAllElements();
+        systemLandscapeView.setPaperSize(PaperSize.A5_Landscape);
+
+
+
+
+
+       /* internetBankingSystem.uses(
+                reportingSystem, "Gets account information from, and makes payments using");
 
         SoftwareSystem emailSystem =
                 model.addSoftwareSystem(
@@ -54,14 +88,14 @@ public class LibraryDiagramAction extends AbstractAction {
         SoftwareSystem atm =
                 model.addSoftwareSystem(Location.Internal, "ATM", "Allows customers to withdraw cash.");
         atm.addTags(EXISTING_SYSTEM_TAG);
-        atm.uses(mainframeBankingSystem, "Uses");
+        atm.uses(reportingSystem, "Uses");
         customer.uses(atm, "Withdraws cash using");
 
         Person customerServiceStaff =
                 model.addPerson(
                         Location.Internal, "Customer Service Staff", "Customer service staff within the bank.");
         customerServiceStaff.addTags(BANK_STAFF_TAG);
-        customerServiceStaff.uses(mainframeBankingSystem, "Uses");
+        customerServiceStaff.uses(reportingSystem, "Uses");
         customer.interactsWith(customerServiceStaff, "Asks questions to", "Telephone");
 
         Person backOfficeStaff =
@@ -70,7 +104,7 @@ public class LibraryDiagramAction extends AbstractAction {
                         "Back Office Staff",
                         "Administration and support staff within the bank.");
         backOfficeStaff.addTags(BANK_STAFF_TAG);
-        backOfficeStaff.uses(mainframeBankingSystem, "Uses");
+        backOfficeStaff.uses(reportingSystem, "Uses");
 
         SystemLandscapeView systemLandscapeView =
                 views.createSystemLandscapeView(
@@ -86,7 +120,7 @@ public class LibraryDiagramAction extends AbstractAction {
         systemContextView.setEnterpriseBoundaryVisible(false);
         systemContextView.addNearestNeighbours(internetBankingSystem);
         systemContextView.setPaperSize(PaperSize.A5_Landscape);
-
+*/
 
         // colours, shapes and other diagram styling
         Styles styles = views.getConfiguration().getStyles();
@@ -110,8 +144,8 @@ public class LibraryDiagramAction extends AbstractAction {
         return workspace;
     }
 
-    public static LibraryDiagramAction create() {
-     return new LibraryDiagramAction();
+    public static LibraryDiagramPublisherAction create() {
+     return new LibraryDiagramPublisherAction();
      }
 
 }

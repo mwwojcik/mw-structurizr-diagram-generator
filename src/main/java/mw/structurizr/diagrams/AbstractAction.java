@@ -5,7 +5,7 @@ import com.structurizr.api.StructurizrClient;
 import com.structurizr.api.StructurizrClientException;
 
 
-public abstract class AbstractAction implements Diagram {
+public abstract class AbstractAction implements DiagramPublisher {
 
 
     public static final String WORKSPACE_NAME = "mw-workspace";

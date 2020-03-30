@@ -1,5 +1,5 @@
 package mw.structurizr.diagrams;
 
-public interface Diagram {
+public interface DiagramPublisher {
     void publish();
 }
