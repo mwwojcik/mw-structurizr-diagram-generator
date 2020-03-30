@@ -2,10 +2,9 @@ package mw.structurizr;
 
 import mw.structurizr.diagrams.CleanMyWorkspaceAction;
 import mw.structurizr.diagrams.DiagramPublisher;
-import mw.structurizr.diagrams.LibraryDiagramPublisherAction;
+import mw.structurizr.diagrams.library.LibraryDiagramPublisherAction;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 class Main {
 

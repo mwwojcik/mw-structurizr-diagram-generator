@@ -1,4 +1,4 @@
-package mw.structurizr.diagrams;
+package mw.structurizr.diagrams.sample;
 
 import com.structurizr.Workspace;
 import com.structurizr.documentation.Format;
@@ -6,6 +6,7 @@ import com.structurizr.documentation.StructurizrDocumentationTemplate;
 import com.structurizr.model.*;
 import com.structurizr.util.MapUtils;
 import com.structurizr.view.*;
+import mw.structurizr.diagrams.AbstractAction;
 
 public class SampleBankingAction extends AbstractAction {
 
@@ -37,6 +38,7 @@ public class SampleBankingAction extends AbstractAction {
             Location.External,
             "Personal Banking Customer",
             "A customer of the bank, with personal bank accounts.");
+
 
     SoftwareSystem internetBankingSystem =
         model.addSoftwareSystem(
