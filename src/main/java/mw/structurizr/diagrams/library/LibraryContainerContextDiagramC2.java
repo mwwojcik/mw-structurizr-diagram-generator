@@ -77,7 +77,7 @@ class LibraryContainerContextDiagramC2 {
         containerView.add(c1.getDeptSystem());
         containerView.add(c1.getReportingSystem());
         containerView.setPaperSize(PaperSize.A5_Landscape);
-        containerView.enableAutomaticLayout();
+        //containerView.enableAutomaticLayout();
 
     }
 

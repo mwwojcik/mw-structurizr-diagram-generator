@@ -11,6 +11,7 @@ class LibraryDiagramWorkspaceBuilder {
     makeStyles(workspace.getViews());
     var c1 = LibrarySystemContextDiagramC1.build(workspace);
     var c2 = LibraryContainerContextDiagramC2.build(workspace, c1);
+    var c3 = LibraryComponentDiagramC3.build(workspace, c2);
   }
 
   private static void makeStyles(ViewSet viewSet) {
