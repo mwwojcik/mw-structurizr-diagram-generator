@@ -6,6 +6,7 @@ import com.structurizr.view.PaperSize;
 import com.structurizr.view.SystemLandscapeView;
 import com.structurizr.view.ViewSet;
 import lombok.Getter;
+import mw.structurizr.diagrams.DiagramTagEnum;
 
 @Getter
 class LibrarySystemContextDiagramC1 {

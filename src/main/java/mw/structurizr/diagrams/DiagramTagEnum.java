@@ -1,8 +1,8 @@
-package mw.structurizr.diagrams.library;
+package mw.structurizr.diagrams;
 
 import lombok.Getter;
 
-enum DiagramTagEnum {
+public enum DiagramTagEnum {
   EXISTING_SYSTEM_TAG("Existing System"),
   BANK_STAFF_TAG("Bank Staff"),
   WEB_BROWSER_TAG("Web Browser"),

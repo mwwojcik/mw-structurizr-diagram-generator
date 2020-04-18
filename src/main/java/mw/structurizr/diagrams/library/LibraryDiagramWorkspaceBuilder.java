@@ -5,6 +5,7 @@ import com.structurizr.model.Tags;
 import com.structurizr.view.Shape;
 import com.structurizr.view.Styles;
 import com.structurizr.view.ViewSet;
+import mw.structurizr.diagrams.DiagramTagEnum;
 
 class LibraryDiagramWorkspaceBuilder {
   public static void build(Workspace workspace) {

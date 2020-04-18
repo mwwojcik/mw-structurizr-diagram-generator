@@ -2,12 +2,12 @@ package mw.structurizr.diagrams.library;
 
 import com.structurizr.Workspace;
 import com.structurizr.model.Container;
-import com.structurizr.model.Person;
 import com.structurizr.model.SoftwareSystem;
 import com.structurizr.view.ContainerView;
 import com.structurizr.view.PaperSize;
 import com.structurizr.view.ViewSet;
 import lombok.Getter;
+import mw.structurizr.diagrams.DiagramTagEnum;
 
 @Getter
 class LibraryContainerContextDiagramC2 {
