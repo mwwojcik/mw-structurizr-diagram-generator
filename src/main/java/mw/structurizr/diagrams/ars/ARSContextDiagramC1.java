@@ -98,14 +98,14 @@ class ARSContextDiagramC1 {
     return model.addPerson(
         Location.Internal,
         "Sales Department Employee",
-        "Sales Department Employee, with ability to define Airline Offers.");
+        "Sales Department Employee, with ability to define Airline Offer.");
   }
 
   private Person salesDepartmentManager(Model model) {
     return model.addPerson(
         Location.Internal,
         "Sales Department Manager",
-        "Sales Department Manager, with ability to accept Airline Offers.");
+        "Sales Department Manager, with ability to accept Airline Offer.");
   }
 
   private Person createCustomer(Model model) {

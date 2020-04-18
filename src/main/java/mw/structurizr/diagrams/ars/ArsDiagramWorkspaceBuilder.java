@@ -14,7 +14,7 @@ class ArsDiagramWorkspaceBuilder {
         makeStyles(workspace.getViews());
         var c1 = ARSContextDiagramC1.build(workspace);
         var c2=ARSContainerContextDiagramC2.build(workspace,c1);
-
+        var c3=ARSComponentDiagramC3.build(workspace,c2,c1);
     }
 
     private static void makeStyles(ViewSet viewSet) {
