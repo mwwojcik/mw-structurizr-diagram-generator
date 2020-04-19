@@ -110,7 +110,7 @@ class ARSComponentDiagramC3 {
     component.add(c1.getEmailSystem());
 
     component.setPaperSize(PaperSize.A5_Landscape);
-    component.enableAutomaticLayout();
+//    component.enableAutomaticLayout();
   }
 
   public static ARSComponentDiagramC3 build(

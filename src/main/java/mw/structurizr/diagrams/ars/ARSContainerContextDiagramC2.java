@@ -88,7 +88,7 @@ class ARSContainerContextDiagramC2 {
 
     containerView.addAllContainers();
     containerView.setPaperSize(PaperSize.A5_Landscape);
-    containerView.enableAutomaticLayout();
+//    containerView.enableAutomaticLayout();
   }
 
   private void buildRelations(ARSContextDiagramC1 c1) {
